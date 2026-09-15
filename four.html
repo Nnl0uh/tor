@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Four</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #131a24;
+    --ink-soft: #2a3444;
+    --paper: #eef1ea;
+    --paper-dim: #d9ddd0;
+    --gold: #d6a94a;
+    --line: rgba(19, 26, 36, 0.16);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Fraunces', serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 5rem 1.75rem 6rem;
+  }
+
+  .hero {
+    display: flex;
+    align-items: flex-end;
+    gap: 1.5rem;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 2.25rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .hero .numeral {
+    font-size: clamp(6rem, 22vw, 10rem);
+    line-height: 0.8;
+    font-weight: 300;
+    font-optical-sizing: auto;
+    letter-spacing: -0.03em;
+  }
+
+  .hero .tagline {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    padding-bottom: 0.6rem;
+    max-width: 20ch;
+  }
+
+  section.chapter {
+    margin-bottom: 3.75rem;
+  }
+
+  .chapter-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.85rem;
+    margin-bottom: 1.1rem;
+  }
+
+  .chapter-head .mark {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--gold);
+    background: var(--ink);
+    padding: 0.2rem 0.5rem;
+    border-radius: 2px;
+  }
+
+  .chapter-head h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  .chapter p, .chapter li {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    max-width: 62ch;
+    color: var(--ink);
+  }
+
+  .chapter p { margin: 0 0 0.9rem; }
+
+  em.riddle {
+    font-style: italic;
+    color: var(--ink-soft);
+  }
+
+  .answer {
+    display: inline-block;
+    margin-top: 0.25rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.85rem;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 0.5rem 0.75rem;
+    border-radius: 3px;
+  }
+
+  .code-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0;
+    border-top: 1px solid var(--line);
+    margin-top: 1.25rem;
+  }
+
+  .code-cell {
+    padding: 0.9rem 0 0.9rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .code-cell + .code-cell {
+    border-left: 1px solid var(--line);
+    padding-left: 1.1rem;
+  }
+
+  .code-cell .label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--ink-soft);
+    display: block;
+    margin-bottom: 0.35rem;
+  }
+
+  .code-cell .val {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.15rem;
+    font-weight: 700;
+  }
+
+  footer {
+    margin-top: 4rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 520px) {
+    .wrap { padding: 3.5rem 1.25rem 4rem; }
+    .hero { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+
+    <div class="hero">
+      <div class="numeral">4</div>
+      <div class="tagline">a small number that keeps turning up in squares, sums, and self-reference</div>
+    </div>
+
+    <section class="chapter">
+      <div class="chapter-head">
+        <span class="mark">MATH</span>
+        <h2>The only number that agrees with itself</h2>
+      </div>
+      <p>Four is the smallest composite number, and the only one where addition and multiplication of its own halves land on the same answer: 2+2 = 2×2 = 4. It's also a perfect square (2²), which gives it a quiet distinction — perfect squares are the only numbers with an odd count of divisors, and 4 has exactly three: 1, 2, and 4.</p>
+      <p>It shows up as a boundary more than a quantity: four dimensions in spacetime, four colors to tile any map without two neighbors matching, four sides to close a shape with the fewest straight lines that isn't a triangle.</p>
+    </section>
+
+    <section class="chapter">
+      <div class="chapter-head">
+        <span class="mark">RIDDLE</span>
+        <h2>The number that spells its own size</h2>
+      </div>
+      <p><em class="riddle">What number, spelled out, has exactly as many letters as its own value?</em></p>
+      <div class="answer">four → F-O-U-R → 4 letters</div>
+      <p style="margin-top:1rem;">Start from almost any number, count the letters in its name, then count the letters in that result, and keep going — the chain almost always collapses into four and sticks there. Four is the fixed point English numbers fall into.</p>
+    </section>
+
+    <section class="chapter">
+      <div class="chapter-head">
+        <span class="mark">CODE</span>
+        <h2>Four ways to write four</h2>
+      </div>
+      <div class="code-row">
+        <div class="code-cell">
+          <span class="label">binary</span>
+          <span class="val">100</span>
+        </div>
+        <div class="code-cell">
+          <span class="label">hex</span>
+          <span class="val">0x4</span>
+        </div>
+        <div class="code-cell">
+          <span class="label">roman</span>
+          <span class="val">IV</span>
+        </div>
+        <div class="code-cell">
+          <span class="label">ascii '4'</span>
+          <span class="val">52</span>
+        </div>
+      </div>
+      <p style="margin-top:1.25rem;">IV is one of the few Roman numerals built by subtraction rather than addition — five minus one, instead of four ones in a row.</p>
+    </section>
+
+    <footer>four things about the number four</footer>
+  </div>
+</body>
+</html>
